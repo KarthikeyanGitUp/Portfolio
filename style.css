@@ -661,7 +661,9 @@ section {
     color: white;
     transition: all 0.3s ease;
 }
-
+.mendix-text {   
+    color: white !important;
+}
 .tech-icon.mendix { background: linear-gradient(135deg, #1e40af, #3b82f6); }
 .tech-icon.microsoft { background: linear-gradient(135deg, #059669, #10b981); }
 .tech-icon.powerbi { background: linear-gradient(135deg, #dc2626, #ef4444); }
