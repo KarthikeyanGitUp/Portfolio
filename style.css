@@ -74,7 +74,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -89,6 +94,12 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    margin-top: -80px;
+}
+.about-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0;
     margin-top: -80px;
 }
 
@@ -197,10 +208,12 @@ section {
     align-items: center;
     height: 80px;
 }
-.mendix-logo{
-     width: 60px;
+
+.mendix-logo {
+    width: 60px;
     height: 60px;
 }
+
 .nav-logo {
     font-size: 1.5rem;
     font-weight: 800;
@@ -253,11 +266,15 @@ section {
     cursor: pointer;
     transition: all 0.3s ease;
     color: var(--text-primary);
+     box-shadow: 0 0 8px rgba(0, 153, 255, 0.5), /* soft outer glow */
+                0 0 15px rgba(0, 153, 255, 0.3); /* deeper glow */
 }
 
 .theme-toggle:hover {
     background: var(--bg-tertiary);
     transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(0, 153, 255, 0.7),
+                0 0 20px rgba(0, 153, 255, 0.5);
 }
 
 .mobile-controls {
@@ -413,7 +430,7 @@ section {
 }
 
 .profile-image {
-    
+
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -664,18 +681,46 @@ section {
     color: white;
     transition: all 0.3s ease;
 }
-.mendix-text {   
+
+.mendix-text {
     color: white !important;
 }
-.tech-icon.mendix { background: linear-gradient(135deg, #1e40af, #3b82f6); }
-.tech-icon.microsoft { background: linear-gradient(135deg, #059669, #10b981); }
-.tech-icon.powerbi { background: linear-gradient(135deg, #dc2626, #ef4444); }
-.tech-icon.javascript { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
-.tech-icon.python { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
-.tech-icon.java { background: linear-gradient(135deg, #dc2626, #f87171); }
-.tech-icon.postgresql { background: linear-gradient(135deg, #1e40af, #3b82f6); }
-.tech-icon.git { background: linear-gradient(135deg, #f97316, #fb923c); }
-.tech-icon.react { background: linear-gradient(135deg, #06b6d4, #67e8f9); }
+
+.tech-icon.mendix {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+}
+
+.tech-icon.microsoft {
+    background: linear-gradient(135deg, #059669, #10b981);
+}
+
+.tech-icon.powerbi {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.tech-icon.javascript {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.tech-icon.python {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+}
+
+.tech-icon.java {
+    background: linear-gradient(135deg, #dc2626, #f87171);
+}
+
+.tech-icon.postgresql {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+}
+
+.tech-icon.git {
+    background: linear-gradient(135deg, #f97316, #fb923c);
+}
+
+.tech-icon.react {
+    background: linear-gradient(135deg, #06b6d4, #67e8f9);
+}
 
 .tech-item:hover .tech-icon {
     transform: scale(1.1) rotate(5deg);
@@ -1021,9 +1066,12 @@ section {
 
 /* Animations */
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-20px);
     }
@@ -1034,6 +1082,7 @@ section {
         opacity: 0;
         transform: translateY(50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1045,6 +1094,7 @@ section {
         opacity: 0;
         transform: translateX(-50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -1056,6 +1106,7 @@ section {
         opacity: 0;
         transform: translateX(50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -1071,36 +1122,48 @@ section {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-    
+
     .hero-image {
         order: -1;
     }
-    
+
     .profile-container {
         width: 300px;
         height: 300px;
     }
-    
+
     .section-title {
         font-size: 2.5rem;
     }
-    
+
     .hero-name {
         font-size: 3rem;
     }
 }
 
 @media (max-width: 768px) {
-    .section-description{
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 52px auto;
+    .navbar {
+        position: fixed;
+    padding: 0 1rem;
+    top: 0;
+    width: 83%;
+    z-index: 1000;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
 }
+    .section-description {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 52px auto;
+    }
+
     .mobile-controls {
         display: flex;
     }
-    
+
     .nav-menu {
         position: fixed;
         top: 80px;
@@ -1114,127 +1177,132 @@ section {
         padding-top: 3rem;
         transition: left 0.3s ease;
     }
-    
+
     .nav-menu.active {
         left: 0;
     }
-    
+
     .nav-link {
         padding: 1rem 0;
         font-size: 1.2rem;
     }
-    
+
     .container {
         padding: 0 1rem;
         margin-top: -38px;
     }
-    
+
     section {
         padding: 60px 0;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .hero-name {
         font-size: 2.5rem;
     }
-    
+
     .hero-title {
         font-size: 1.5rem;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
     }
-    
+
     .services-grid,
     .projects-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .tech-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .stats {
         grid-template-columns: 1fr;
         gap: 1rem;
         display: flex;
     }
-    
+
     .radial-skills {
-    /*    grid-template-columns: 1fr; */
+        /*    grid-template-columns: 1fr; */
         gap: 2rem;
     }
 }
 
 @media (max-width: 480px) {
     .section-divider {
-    width: 100px;
-    height: 4px;
-    background: var(--gradient-primary);
-    margin: 0 auto 2rem;
-    border-radius: 2px;
-    margin-bottom: -44px;
-}
-    .hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    width: 100%;
-    margin-top: 60px;
+        width: 100px;
+        height: 4px;
+        background: var(--gradient-primary);
+        margin: 0 auto 2rem;
+        border-radius: 2px;
+        margin-bottom: -44px;
     }
+
+    .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        width: 100%;
+        margin-top: 60px;
+    }
+
     .hero-name {
         font-size: 2rem;
     }
-    
+
     .section-title {
         font-size: 1.8rem;
     }
-    .mendix-logo{
-     width: 40px;
-     height: 40px;
+
+    .mendix-logo {
+        width: 40px;
+        height: 40px;
     }
+
     .profile-container {
         width: 200px;
         height: 200px;
     }
-    
+
     .floating-icon {
         width: 60px;
         height: 60px;
         font-size: 1.5rem;
     }
-    
+
     .service-card,
     .project-card {
         padding: 2rem 1.5rem;
     }
-    
+
     .tech-grid {
-     /*   grid-template-columns: 1fr; */
+        /*   grid-template-columns: 1fr; */
     }
 }
 
 /* Print Styles */
 @media print {
+
     .navbar,
     .scroll-to-top,
     .floating-icon {
         display: none !important;
     }
-    
+
     section {
         padding: 40px 0;
         break-inside: avoid;
     }
-    
+
     .hero {
         min-height: auto;
     }
-    
+
     * {
         background: transparent !important;
         color: black !important;
